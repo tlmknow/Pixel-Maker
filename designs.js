@@ -4,12 +4,12 @@ const pickColor = document.getElementById("colorPicker");
 const table = document.getElementById("pixelCanvas");
 const sizePicker = document.getElementById("sizePicker");
 
-sizePicker.addEventListener("submit", (event) => {
+sizePicker.addEventListener("submit", function() {
 	event.preventDefault();
 
 
-	let height = document.getElementById("inputHeight").value;
-	let width = document.getElementById("inputWidth").value;
+	height = document.getElementById("inputHeight").value;
+	width = document.getElementById("inputWidth").value;
 	table.innerHTML = null;
 	makeGrid(height, width);
 });
@@ -19,13 +19,13 @@ sizePicker.addEventListener("submit", (event) => {
 
 function makeGrid(height, width) {
 
-
-	for (i = 0; i <= height; i++) {
+//create row and columns
+	for (r = 0; r <= height; r++) {
 		let row = table.insertRow();
-		for (j = 0; j <= width; j++) {
+		for (c = 0; c <= width; c++) {
 			let cell = row.insertCell()
-			cell.addEventListener("click", (e) => {
-
+			cell.addEventListener("click", function() {
+//sets the background color for the selected cell
 				cell.style.backgroundColor = pickColor.value;
 			})
 		}
