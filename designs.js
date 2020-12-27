@@ -22,11 +22,11 @@ function makeGrid() {
 	for (r = 0; r <= height.value; r++) {
 		let row = table.insertRow();
 		for (c = 0; c <= width.value; c++) {
-			let column = row.insertCell()
+			let column = row.insertCell();
 			//sets the background color for the selected cell
 			column.addEventListener("click", function() {
-      column.style.backgroundColor = pickColor.value;
-			})
+                        column.style.backgroundColor = pickColor.value;
+			});
 		}
 
 	}
